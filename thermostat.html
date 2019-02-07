@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
     <title>Thermostat</title>
     <script src="src/thermostat.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="interface.js"></script>
     <style>
+       .column {
+        width: 28%;
+        align: right;
+        float: left;
+        padding: 10px;
+        margin: 10px;
+      }
+
+       #temperature {
+         font-size: 100px;
+         margin: 10px;
+       }
         .high-usage {
         color: red;
       }
@@ -17,21 +29,59 @@
         .low-usage {
           color: green;
         }
+
+        #powersaving-on.true {
+          background-color: green;
+          color: white;
+        }
+
+        #powersaving-off.false {
+          background-color: red;
+          color: white;
+        }
+
+        .btn-group .button {
+          font-size: 20px;
+          padding: 10px, 20px;
+          cursor: pointer;
+          display: inline-block;
+          display: block;
+          width: 150px;
+          margin: 10px;
+        }
+
+        .button:hover {
+          background-color: grey;
+        }
+
+
     </style>
   </head>
   <body>
-    <h1>Family Thermostat</h1>
-    <h3>Current temperature: </h3>
-    <h3 id="temperature">20</h3>
-    <h4>Energy Efficiency:</h4>
-    <p id="energy-usage" >Medium</p>
-    power saving mode is <span id="power-saving-status">on</span>
-    <button id="powersaving-on">PSM on</button>
-    <button id="powersaving-off">PSM off</button>
-    <br>
-    <button id ="up" type="button" name="up">Turn up</button>
-    <button id="down" type="button" name="down">Turn down</button>
-    <button id="reset" type="button" name="reset">Reset</button>
-    <br>
+    <h1 style="text-align: center">Family Thermostat</h1>
+
+    <div class= 'row'>
+      <div class='column'>
+        <h3>Current temperature: </h3>
+        <p id="temperature">20</p>
+      </div>
+      <div class='column'>
+        <div class='btn-group'>
+          <br>
+          <button class="button" id ="up" type="button" name="up"> + </button>
+          <button class="button" id="down" type="button" name="down"> - </button>
+          <button class="button" id="reset" type="button" name="reset">Reset</button>
+          <br>
+        </div>
+      </div>
+      <div class='column'>
+        <h3>Energy Efficiency:</h4>
+        <p id="energy-usage" >Medium</p>
+        Power saving mode:
+        <button class="button" id="powersaving-on">ON</button>
+        <button class="button" id="powersaving-off">OFF</button>
+        <br>
+      </div>
+    </div>
   </body>
 </html>
