@@ -3,16 +3,22 @@
   <head>
     <title>Thermostat</title>
     <script src="src/thermostat.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="interface.js"></script>
   </head>
   <body>
     <h1>Family Thermostat</h1>
     <h3>Current temperature: </h3>
-    <h3>20 °C</h3>
-    <button type="button" name="up">Turn up</button>
-    <button type="button" name="down">Turn down</button>
-    <button type="button" name="reset">Reset</button>
-    <br>
+    <h3 id="temperature">20</h3>
     <h4>Energy Efficiency:</h4>
-    <p>Medium</p>
+    <p id="energy-usage" >Medium</p>
+    power saving mode is <span id="power-saving-status">on</span>
+    <button id="powersaving-on">PSM on</button>
+    <button id="powersaving-off">PSM off</button>
+    <br>
+    <button id ="up" type="button" name="up">Turn up</button>
+    <button id="down" type="button" name="down">Turn down</button>
+    <button id="reset" type="button" name="reset">Reset</button>
+    <br>
   </body>
 </html>
