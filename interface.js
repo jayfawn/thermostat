@@ -4,6 +4,9 @@ $( document ).ready(function() {
   function refreshData() {
     $('#temperature').text(thermostat.temperature);
     $('#energy-usage').text(thermostat.energyUsage());
+    $('#energy-usage').attr('class', thermostat.energyUsage());
+    $('#temperature').attr('class', thermostat.energyUsage());
+
   }
 
   refreshData();
