@@ -5,9 +5,10 @@
     <script src="src/thermostat.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="interface.js"></script>
+    <script src="src/weatherapi.js"></script>
     <style>
        .column {
-        width: 28%;
+        width: 20%;
         align: right;
         float: left;
         padding: 10px;
@@ -81,6 +82,12 @@
         <button class="button" id="powersaving-on">ON</button>
         <button class="button" id="powersaving-off">OFF</button>
         <br>
+      </div>
+      <div id ="weather-container" class='column'>
+        <form id="city-submit">
+        <input type="text" method="post" id ="new-city">
+        <input type="submit" value="submit"></input>
+      </form>
       </div>
     </div>
   </body>

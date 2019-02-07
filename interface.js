@@ -38,5 +38,11 @@ $( document ).ready(function() {
     thermostat.turnPowerSavingOff();
     $('#power-saving-status').text('OFF');
     refreshData();
+  });
+
+  $( '#city-submit').submit(function( event ) {
+    event.preventDefault();
+    var city = $('#new-city').val();
+    displayWeather(city);
   })
 });
