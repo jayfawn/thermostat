@@ -40,9 +40,11 @@ $( document ).ready(function() {
     refreshData();
   });
 
-  $( '#city-submit').submit(function( event ) {
+  $( '#city-submit' ).submit(function( event ) {
     event.preventDefault();
     var city = $('#new-city').val();
-    displayWeather(city);
+    getWeatherURL(city, (data) => {
+      loadWeather(data.main.temp, data.weather[0].main);
+    });
   })
 });
